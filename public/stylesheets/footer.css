@@ -1,6 +1,6 @@
 footer{
     height: 40px;
-    color: white;
+    color: WHITE;
     padding: 0 10px;
 }
 
@@ -10,4 +10,9 @@ footer ul{
 
 footer ul li{
     margin-top: 0;
+}
+
+.uk-background-primary {
+    background-color: whitesmoke;
+    color: black;
 }

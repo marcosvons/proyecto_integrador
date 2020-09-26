@@ -1,6 +1,8 @@
-/* FONTS */
+/* INICIO DEL HEADER */
+
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-/* FONTS */
+
 
 
 header{
@@ -9,27 +11,32 @@ header{
 }
 header section{
     height: 100%;
+    background-color: whitesmoke;
 }
 header section nav{
     height: 100%;
+    background-color: whitesmoke;
 }
 header nav ul li a{
-    color: white;
+    font-family: 'Roboto', sans-serif;
+    color: #3d3d3d;
 }
 header nav ul li a:hover{
-    color: lightsteelblue;
+    color: rgb(221, 60, 60);
     text-decoration: none;
+
 }
 .logo{
     margin: 0px;
 }
 .logo a{
-    font-family: 'Fjalla One', sans-serif;
-    color: white;
+    font-family: 'Anton', sans-serif;
+    color: rgb(221, 60, 60);;
 }
+
 .logo a:hover {
     text-decoration: none;
-    color: white;
+    color: #3d3d3d;
 }
 header ul{
     margin: 0;
@@ -38,11 +45,18 @@ header ul{
 }
 header div.uk-navbar-center ul li{
     padding: 0 10px;
-    border-right: 1px solid white;
+    border-right: 1px solid #3d3d3d;
 }
 header div.uk-navbar-center ul li:nth-last-child(1){
     border-right: none;
 }
 header nav form input, header nav form ::placeholder, header nav form span{
-    color: white !important;
+    color: #3d3d3d !important;
 }
+
+header.uk-background-primary{
+    background-color: whitesmoke;
+}
+
+
+ /* FIN DEL HEADER */

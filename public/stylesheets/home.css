@@ -1,3 +1,72 @@
+*{
+   list-style-type: none; 
+}
+
+/* INICIO DEL HEADER */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
+
+header{
+    height: 55px;
+    padding-top: 10px;
+}
+header section{
+    height: 100%;
+    background-color: whitesmoke;
+}
+header section nav{
+    height: 100%;
+    background-color: whitesmoke;
+}
+header nav ul li a{
+    font-family: 'Roboto', sans-serif;
+    color: #3d3d3d;
+}
+header nav ul li a:hover{
+    color: rgb(221, 60, 60);
+    text-decoration: none;
+
+}
+.logo{
+    margin: 0px;
+}
+.logo a{
+    font-family: 'Anton', sans-serif;
+    color: rgb(221, 60, 60);;
+}
+
+.logo a:hover {
+    text-decoration: none;
+    color: #3d3d3d;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header div.uk-navbar-center ul li{
+    padding: 0 10px;
+    border-right: 1px solid #3d3d3d;
+}
+header div.uk-navbar-center ul li:nth-last-child(1){
+    border-right: none;
+}
+header nav form input, header nav form ::placeholder, header nav form span{
+    color: #3d3d3d !important;
+}
+
+header.uk-background-primary{
+    background-color: whitesmoke;
+}
+
+
+ /* FIN DEL HEADER */
+
+
+/* BODY */
 article.post{
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -12,7 +81,7 @@ article.post div.info-usuario{
 article.post div.info-usuario img{
     border-radius: 50px;
     padding: 1px;
-    border: 1.5px solid red;
+    border: 1.5px solid lightgray;
 }
 article.post div.info-usuario h4{
    margin: 8px 10px;
@@ -62,3 +131,29 @@ article.post div.post-comentarios ul li p{
     margin: 0 5px;
 }
 
+/* a{
+    font-family: 'Raleway', sans-serif;
+    list-style-type: none;
+    color: black;
+} */
+
+
+ a{
+    color: black;
+    list-style-type: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+/* FIN DEL BODY */
+
+
+/* INICIO FOOTER */
+footer.uk-background-primary{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #3d3d3d;
+    background-color: whitesmoke;
+}
+/* FIN FOOTER */
