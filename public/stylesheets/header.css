@@ -56,6 +56,8 @@ header nav form input, header nav form ::placeholder, header nav form span{
 
 header.uk-background-primary{
     background-color: whitesmoke;
+    position: sticky;
+    top: 0px;
 }
 
 
