@@ -63,6 +63,7 @@ header.uk-background-primary{
 }
 
 
+
  /* FIN DEL HEADER */
 
 
@@ -137,14 +138,17 @@ article.post div.post-comentarios ul li p{
     color: black;
 } */
 
-
- a{
+body a {
     color: black;
-    list-style-type: none;
-    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-
+body a:hover{
+    color: rgb(221, 60, 60);
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 /* FIN DEL BODY */
