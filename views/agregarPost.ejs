@@ -38,14 +38,14 @@
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
-                <form action="">
+                <form action="POST">
                     <div>
-                        <label for="url_photo">Add URL Photo</label>
-                        <input type="text" id="url_photo" name="url_photo" required>
+                        <label for="url_photo">Add Photo</label>
+                        <input type="file" id="img" name="img" accept="image/*" required>
                     </div>
                     <div>
                         <label for="post_descr">Description</label>
-                        <input type="text" id="post_descr" name="post_descr" required>
+                        <input type="text" id="post_descr" name="post_descr" >
                     </div>
                     <button  type="submit">Post</button>
                 </form>

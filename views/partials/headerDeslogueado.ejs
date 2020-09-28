@@ -14,6 +14,10 @@
                     </ul>
                 </div>
                  <div class="uk-navbar-right">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
                     <ul class="uk-flex uk-flex-between uk-flex-middle">
                         <li>
                             <form action="" class="uk-search uk-search-default">
@@ -27,3 +31,29 @@
         </div>
     </section>
 </header>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var checkbox = document.querySelector('input[type="checkbox"]');
+    
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+            document.documentElement.classList.toggle('dark-mode');
+    
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert')
+            });  
+          console.log('Checked');
+        } else {
+            document.documentElement.classList.toggle('dark-mode');
+    
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert')
+            });
+          console.log('Not checked');
+        }
+      });
+    });
+    
+    </script>
