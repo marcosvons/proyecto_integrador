@@ -1,13 +1,17 @@
+*{
+    font-family: 'Raleway', sans-serif;
+ }
+ 
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 form.agregarPost{
     margin: 0 auto;
+
 }
 
 form.agregarPost div{
     margin: 4px auto ;
-    
 }
 
