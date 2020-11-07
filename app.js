@@ -6,14 +6,15 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var agregarPostRouter=require('./routes/agregarPost');
-var detallePostRouter=require('./routes/detallePost');
+//var agregarPostRouter=require('./routes/agregarPost');
+//var detallePostRouter=require('./routes/detallePost');
 var detalleUsuarioRouter=require('./routes/detalleUsuario');
 var homeRouter=require('./routes/home');
 var loginRouter=require('./routes/login');
 var miPerfilRouter=require('./routes/miPerfil');
 var registracionRouter=require('./routes/registracion');
 var resultadoBusquedaRouter=require('./routes/resultadoBusqueda');
+var postRouter=require('./routes/post')
 
 
 var app = express();
@@ -30,8 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/agregarPost', agregarPostRouter);
-app.use('/detallePost', detallePostRouter);
+app.use('/post', postRouter);
+//app.use('/agregarPost', agregarPostRouter);
+//app.use('/detallePost', detallePostRouter);
 app.use('/detalleUsuario', detalleUsuarioRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
