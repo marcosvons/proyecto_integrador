@@ -2,18 +2,17 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var logger = require('morgan');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var detalleUsuarioRouter=require('./routes/detalleUsuario');
 var homeRouter=require('./routes/home');
 var loginRouter=require('./routes/login');
-var miPerfilRouter=require('./routes/miPerfil');
 var registracionRouter=require('./routes/registracion');
-var resultadoBusquedaRouter=require('./routes/resultadoBusqueda');
 var postRouter=require('./routes/post')
-
+const db = require('./database/models');
 
 var app = express();
 
@@ -25,19 +24,42 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session(
+  { secret: 'moviesdb',
+    resave: false,
+    saveUninitialized: true}
+));
 app.use(express.static(path.join(__dirname, 'public')));
+
+//para hacer cosas en todas las vistas
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+  res.locals.user=req.session.user;
+ 
+  }
+  return next();
+})
+
+app.use(function(req, res, next){
+  if (req.cookies.userId != undefined && req.session.user == undefined){
+    db.User.findByPk(req.cookies.userId)
+      .then(function(user){
+        req.session.user=user;
+        res.redirect(req.originalUrl)
+        return next()
+      })
+      .catch(function(error){
+        console.log(error)
+      })
+  }
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/post', postRouter);
-//app.use('/agregarPost', agregarPostRouter);
-//app.use('/detallePost', detallePostRouter);
-//app.use('/detalleUsuario', detalleUsuarioRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
-//app.use('/miPerfil', miPerfilRouter);
 app.use('/registracion', registracionRouter);
-//app.use('/resultadoBusqueda', resultadoBusquedaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

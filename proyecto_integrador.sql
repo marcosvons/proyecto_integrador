@@ -6,7 +6,9 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
 nombre_usuario VARCHAR (50) NOT NULL,
 date_registration DATE,
 followers INT,
-email VARCHAR (320) NOT NULL 
+email VARCHAR (320) NOT NULL,
+fecha_nac DATE,
+preg_seg VARCHAR (50) 
 );
 
 CREATE TABLE posts(

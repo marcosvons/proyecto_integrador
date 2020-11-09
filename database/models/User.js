@@ -19,7 +19,13 @@ module.exports = function (sequelize, dataTypes){
         },
         email: {
             type:dataTypes.STRING
-        }
+        },
+        fecha_nac: {
+            type: dataTypes.DATE
+        },
+        preg_seg: {
+            type: dataTypes.STRING
+        } 
 
     };
 
