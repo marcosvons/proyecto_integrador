@@ -1,5 +1,5 @@
-CREATE SCHEMA `usuarios`;
-USE usuarios;
+CREATE SCHEMA `proyecto_integrador`;
+USE proyecto_integrador;
 
 CREATE TABLE usuarios(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
