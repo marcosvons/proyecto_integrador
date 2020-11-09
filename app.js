@@ -6,8 +6,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//var agregarPostRouter=require('./routes/agregarPost');
-//var detallePostRouter=require('./routes/detallePost');
 var detalleUsuarioRouter=require('./routes/detalleUsuario');
 var homeRouter=require('./routes/home');
 var loginRouter=require('./routes/login');
@@ -34,12 +32,12 @@ app.use('/users', usersRouter);
 app.use('/post', postRouter);
 //app.use('/agregarPost', agregarPostRouter);
 //app.use('/detallePost', detallePostRouter);
-app.use('/detalleUsuario', detalleUsuarioRouter);
+//app.use('/detalleUsuario', detalleUsuarioRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
-app.use('/miPerfil', miPerfilRouter);
+//app.use('/miPerfil', miPerfilRouter);
 app.use('/registracion', registracionRouter);
-app.use('/resultadoBusqueda', resultadoBusquedaRouter);
+//app.use('/resultadoBusqueda', resultadoBusquedaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
