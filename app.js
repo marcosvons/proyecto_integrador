@@ -6,7 +6,6 @@ var session = require('express-session');
 var logger = require('morgan');
 
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var homeRouter=require('./routes/home');
 var loginRouter=require('./routes/login');
@@ -32,7 +31,7 @@ app.use(session(
 app.use(express.static(path.join(__dirname, 'public')));
 
 //para hacer cosas en todas las vistas
-app.use(function(req, res, next){
+/*app.use(function(req, res, next){
   if(req.session.user != undefined){
   res.locals.user=req.session.user;
  
@@ -52,9 +51,8 @@ app.use(function(req, res, next){
         console.log(error)
       })
   }
-})
+})*/
 
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/post', postRouter);
 app.use('/home', homeRouter);

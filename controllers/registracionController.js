@@ -8,11 +8,16 @@ const op= db.Sequelize.Op;
 let registracionController={
     index: function(req, res){
         console.log(users); 
-        if(req.session.user != undefined){
+        users.findAll()
+        .then(function (resultado){
+            console.log(resultado)
+        })
+        
+        /*if(req.session.user != undefined){
         return res.redirect('/home')
-        } else {
+        } else {*/
             return res.render('registracion')
-        }  
+        //}  
           
     },    
     store: function(req, res){
