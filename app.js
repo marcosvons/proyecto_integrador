@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session(
-  { secret: 'moviesdb',
+  { secret: 'proyecto_integrador',
     resave: false,
     saveUninitialized: true}
 ));

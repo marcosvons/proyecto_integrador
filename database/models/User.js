@@ -11,8 +11,11 @@ module.exports = function (sequelize, dataTypes){
         nombre_usuario: {
             type: dataTypes.STRING
         },
+        password: {
+            type: dataTypes.STRING
+        },
         date_registration: {
-            type: dataTypes.DATE,
+            type: dataTypes.DATE
         },
         followers: {
             type: dataTypes.INTEGER

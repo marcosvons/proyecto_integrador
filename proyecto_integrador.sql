@@ -4,6 +4,7 @@ USE proyecto_integrador;
 CREATE TABLE usuarios(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
 nombre_usuario VARCHAR (50) NOT NULL,
+password VARCHAR(255),
 date_registration DATE,
 followers INT,
 email VARCHAR (320) NOT NULL,

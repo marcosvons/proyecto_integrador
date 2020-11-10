@@ -7,11 +7,11 @@ const op= db.Sequelize.Op;
 
 let registracionController={
     index: function(req, res){
-        console.log(users); 
+        /*console.log(users); 
         users.findAll()
         .then(function (resultado){
             console.log(resultado)
-        })
+        })*/
         
         /*if(req.session.user != undefined){
         return res.redirect('/home')
