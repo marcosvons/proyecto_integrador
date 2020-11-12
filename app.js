@@ -31,27 +31,30 @@ app.use(session(
 app.use(express.static(path.join(__dirname, 'public')));
 
 //para hacer cosas en todas las vistas
-/*app.use(function(req, res, next){
-  if(req.session.user != undefined){
-  res.locals.user=req.session.user;
- 
+app.use(function(req, res, next){
+  if(req.session.userLogueado != undefined){
+  res.locals.user=req.session.userLogueado;
+  return next()
   }
   return next();
 })
 
 app.use(function(req, res, next){
-  if (req.cookies.userId != undefined && req.session.user == undefined){
+  if (req.cookies.userId != undefined && req.session.userLogueado == undefined){
     db.User.findByPk(req.cookies.userId)
       .then(function(user){
-        req.session.user=user;
-        res.redirect(req.originalUrl)
+        req.session.userLogueado=user;
+        res.locals.userLogueado=user;
+        //res.redirect(req.originalUrl)
         return next()
       })
       .catch(function(error){
         console.log(error)
       })
+  } else {
+    return next()
   }
-})*/
+})
 
 app.use('/users', usersRouter);
 app.use('/post', postRouter);
