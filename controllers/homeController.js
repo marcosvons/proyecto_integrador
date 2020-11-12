@@ -1,6 +1,17 @@
+const db= require('../database/models');
+const op= db.Sequelize.Op;
+
 let homeController={
     index: function(req, res){
-        return res.render('home')
+        db.Post.findAll(
+            {
+            order: [["createdAt", "DESC"]],  
+            },  
+        )
+
+        .then(function(posts){
+            res.render("home", {posts: posts})
+        })
     },
 }
 
