@@ -5,7 +5,7 @@ let homeController={
     index: function(req, res){
         db.Post.findAll(
             {
-            order: [["createdAt", "DESC"]],  
+            order: [["published", "DESC"]],  
             },  
         )
 
