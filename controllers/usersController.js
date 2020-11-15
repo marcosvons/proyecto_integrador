@@ -1,6 +1,6 @@
-const db= require('../database/models');
-const bcrypt=require('bcryptjs')
-const users=db.User;
+const db= require('../database/models/index');
+const bcrypt=require('bcryptjs');
+const users = db.User;
 const op= db.Sequelize.Op;
 
 let usersController={
@@ -19,14 +19,29 @@ let usersController={
         db.User.findAll(
             {
                 where: {
-                    [op.or]: [{ nombre_usuario: { [op.like]: "%" + busqueda + "%"} }, { email: { [op.like]: "%" + busqueda + "%"} }
-                ],
-                order: ["nombre_usuario"]
+                    [op.or]: [{ nombre_usuario: { [op.like]: "%" + busqueda + "%"} }, { email: { [op.like]: "%" + busqueda + "%"} }],
                 }
+
+    
             }
+            /* {
+                where: [
+                    { [op.or]: {
+                        nombre_usuario: { [op.like] : "%" + busqueda + "%" }, 
+                        email: { [op.like] : "%" + busqueda + "%" },
+                    }
+                    }
+                ],
+                    order: ["nombre_usuario", "ASC"]
+                } */
         )
-        .then(function(usuarioResultado){
-            res.render("resultadoBusqueda", {usuarioResultado: usuarioResultado, busqueda: busqueda})
+        .then(function(busquedaUsuario){
+            //console.log(busquedaUsuario);
+            //res.send(busquedaUsuario);
+        res.render("resultadoBusqueda", {busquedaUsuario: busquedaUsuario, busqueda: busqueda})
+        })
+        .catch(function (error) {
+            console.log(error);
         })
     },
     logout: function(req, res){

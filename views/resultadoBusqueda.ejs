@@ -43,12 +43,12 @@
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                
                 <h1>Usuarios que coinciden con su búsqueda:</h1>
-                <ul>
-                  <% for(let i=0; i<usuarioResultado.length; i++){ %>
+                <ul>   
+                    <% for( let i = 0; i < busquedaUsuario.length; i++) { %>
                     <li>
-                       <a href="/users/detalleUsuario/<%= usuarioResultado[i].id %>"> <%= usuarioResultado[i].nombre_usuario %> </a> 
+                        <a href="/users/detalleUsuario/<% busquedaUsuario[i].id %>"><%= busquedaUsuario[i].nombre_usuario %></a>
                     </li>
-                  <% } %> 
+                    <% } %>
                 </ul>
 
             </div>
@@ -61,3 +61,4 @@
 </body>
 
 </html>
+

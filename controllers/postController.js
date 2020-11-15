@@ -1,5 +1,5 @@
 const db= require('../database/models');
-const bcrypt=require('bcryptjs')
+const bcrypt=require('bcryptjs');
 const users=db.User;
 const op= db.Sequelize.Op;
 
@@ -19,7 +19,7 @@ let postController={
         req.body.description
 
         let newPost = {
-            id_usuario: null,
+            id_usuario: req.session.userLogueado.id,
             url_img: req.body.img,
             post_descr: req.body.description,
         }
