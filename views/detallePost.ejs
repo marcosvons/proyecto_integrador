@@ -34,8 +34,11 @@
 </head>
 
 <body>
-    <%- include('./partials/headerLogueado')  %> 
-
+    <% if (locals.user){ %> 
+        <%- include('./partials/headerLogueado')  %> 
+        <% } else { %>
+        <%- include("./partials/headerDeslogueado") %>
+        <% } %>  
     <main>
         <div class="uk-section uk-section-xsmall">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">

@@ -5,7 +5,11 @@ const op= db.Sequelize.Op;
 
 let loginController={
     index: function(req, res){
-        return res.render('login')
+        if(req.session.userLogueado != undefined){
+            return res.redirect('/home')
+            } else {
+                return res.render('login')
+            }
     },
     login: function(req, res){
         users.findOne({
@@ -24,7 +28,7 @@ let loginController={
                 if(req.body.rememberme != undefined){
                     res.cookie('userId', user.id, {maxAge: 20*1000})
                 }
-                return res.redirect('/agregarPost')
+                return res.redirect('/home')
             }
         })
         .catch(function(error){
