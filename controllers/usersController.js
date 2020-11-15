@@ -3,7 +3,11 @@ let usersController={
         return res.render('detalleUsuario')
     },
     miPerfil: function(req, res){
-        return res.render('miPerfil')
+        if(req.session.userLogueado != null){
+            return res.render('miPerfil')
+            } else {
+                return res.send("Solo los usuarios logueados pueden acceder al perfil")
+            }
     },
     resultadoBusqueda: function(req, res){
         return res.render('resultadoBusqueda')
