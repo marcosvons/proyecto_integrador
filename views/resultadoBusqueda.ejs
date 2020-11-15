@@ -42,7 +42,14 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                
-                <h2>(Mostar resultados de busqueda)</h2>
+                <h1>Usuarios que coinciden con su búsqueda:</h1>
+                <ul>
+                  <% for(let i=0; i<usuarioResultado.length; i++){ %>
+                    <li>
+                       <a href="/users/detalleUsuario/<%= usuarioResultado[i].id %>"> <%= usuarioResultado[i].nombre_usuario %> </a> 
+                    </li>
+                  <% } %> 
+                </ul>
 
             </div>
         </div>
