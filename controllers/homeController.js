@@ -6,8 +6,8 @@ let homeController={
     index: function(req, res){
         posts.findAll({
             include: [{association: "users"}, {association: "comentarios"}]
-        },
-            {
+        ,
+            
             order: [
                 ["published", "DESC"]
             ]
