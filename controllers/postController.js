@@ -5,7 +5,7 @@ const op= db.Sequelize.Op;
 let postController={
     detallePost: function(req, res){
         let id = req.params.id;
-        
+        dueñoPost=req.session.userLogueado
         post.findByPk(id,
             {include:[
                 {association: "users"},
@@ -13,7 +13,7 @@ let postController={
             ]})
     
         .then(function(post){
-            res.render("detallePost", {post: post})
+            res.render("detallePost", {post: post, dueñoPost: dueñoPost})
         })
         .catch(function(error){
             console.log(error)

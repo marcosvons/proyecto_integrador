@@ -53,7 +53,8 @@
                             <img src="https://via.placeholder.com/35" alt="Foto del usuario" class="inverted">
                             <h3><%- post.users.nombre_usuario %> </h3>
                             
-                            <% if (locals.user.id == post.users.id){ %>
+                            <% if (dueñoPost != undefined) { %> 
+                            <% if (dueñoPost.id == post.users.id){ %>
                                 <form action="/post/detallePost/delete/<%- post.id %> " method="POST">
                                 <button type="submit">Borrar post</button> 
                                 </form>
@@ -61,7 +62,9 @@
                                 <form action="/post/detallePost/editarPost/<%- post.id  %>" method="GET">
                                     <button type="submit">Editar post</button> 
                                 </form>
-                            <% } %>
+                            <% }  %>
+                            <% } %> 
+                             
                         </div>
                         <div class="lista-comentarios" >
                             <% for (let i=0; i<post.comentarios.length; i++) { %> 
