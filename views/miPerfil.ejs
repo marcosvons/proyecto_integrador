@@ -40,6 +40,7 @@
         <% } else { %>
         <%- include("./partials/headerDeslogueado") %>
         <% } %>  
+        <br>
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-small">
@@ -70,7 +71,7 @@
                         <% for (let i=0; i<resultados.length; i++){ %> 
                         <div
                             class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
+                            <a href="/post/detallePost/<%- resultados[i].id %> " class="link-detalle">
                                 <img src="<%- resultados[i].url_img  %> " alt="foto de perfil" class="foto-perfil inverted">
                                 <p class="uk-text-center"><%- resultados[i].post_descr  %> </p>
                             </a>
