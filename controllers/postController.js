@@ -1,5 +1,4 @@
 const db= require('../database/models');
-const bcrypt=require('bcryptjs');
 const post=db.Post;
 const op= db.Sequelize.Op;
 
