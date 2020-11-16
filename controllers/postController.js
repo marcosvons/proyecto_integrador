@@ -150,7 +150,7 @@ let postController={
             order: [
                 ['published', 'DESC']
             ],
-            limit: 5
+            limit: 20
         })
         .then(function(busquedaPost){
             //console.log(busquedaUsuario);
