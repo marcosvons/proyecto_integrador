@@ -142,6 +142,8 @@ let postController={
     buscador: function (req, res){
         let busqueda = req.query.buscadorposts;
         post.findAll({
+            include:
+                {association: "users"},
             where: [
                 { post_descr : {[op.like]: "#%" + busqueda + "%"}   }
             ],

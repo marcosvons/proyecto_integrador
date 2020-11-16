@@ -38,7 +38,7 @@
         <% } else { %>
         <%- include("./partials/headerDeslogueado") %>
         <% } %>  
-
+            <br> <br>
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-small">
@@ -48,14 +48,13 @@
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
-                            <h3 class="uk-margin-remove">Nombre de usuario</h3>
+                            <h3 class="uk-margin-remove"><%- usuario.nombre_usuario %> </h3>
                             <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
                         </div>
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li>6 posts</li>
-                                <li>2140 seguidores</li>
-                                <li>1643 seguidos</li>
+                                <li><%- usuario.posts.length %>  posts </li>
+                                <li><%- usuario.followers  %>  seguidores </li>
                             </ul>
                         </div>
                     </div>
@@ -64,42 +63,15 @@
 
                <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <% for (let i=0; i<usuario.posts.length; i++){ %> 
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil inverted">
-                                <p class="uk-text-center">Lorem ipsum</p>
+                            <a href="/post/detallePost/<%- usuario.posts[i].id %> " class="link-detalle">
+                                <img src="<%= usuario.posts[i].url_img %> " alt="foto de perfil" class="foto-perfil inverted">
+                                <p class="uk-text-center"><%- usuario.posts[i].post_descr %> </p>
                             </a>
                         </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil inverted">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil inverted">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil inverted">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil inverted">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
-                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="/post/detallePost" class="link-detalle">
-                                <img src="https://via.placeholder.com/200" alt="foto de perfil" class="foto-perfil inverted">
-                                <p class="uk-text-center">Lorem ipsum</p>
-                            </a>
-                        </div>
+                        <% } %> 
+                        
                     
                       
                         

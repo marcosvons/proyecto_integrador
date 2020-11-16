@@ -5,7 +5,18 @@ const posts=db.Post
 
 let usersController={
     detalleUsuario: function(req, res){
-        return res.render('detalleUsuario')
+        let idUser = req.params.id;
+
+        users.findByPk(idUser, {
+            include: [{ association: 'posts' }]
+        })
+            .then( function (usuario){
+                // return res.send(resultados)
+                return res.render('detalleUsuario', { usuario });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     },
     miPerfil: function(req, res){
         if(req.session.userLogueado != null){

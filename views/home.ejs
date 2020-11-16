@@ -71,13 +71,18 @@
                                 <p class="uk-width-5-6"> <%- posts[i].post_descr  %> </p>
                             </div>
                         </div>
+                         
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
+                               <!-- <% /*for (i=0; i<posts.comentarios.length; i++) { */ %> 
+
                                 <li>
-                                    <a href="/users/detalleUsuario/<%- posts[i].comentarios.id_usuario   %> "><%- posts[i].comentarios.id_usuario  %> </a>
-                                    <p><%- posts[i].comentarios.comentario  %> </p>
+                                    <a href="/users/detalleUsuario/<%- /* posts.comentarios[i].id_usuario  */ %> "><%- /* posts.comentarios[i].id_usuario */ %> </a>
+                                    <p><%- /* posts.comentarios[i].comentario */  %> </p>
                                 </li>
+                                <% /* } */  %> 
+                            -->
                                 <li>
                                     <a href="/users/detalleUsuario">valunies</a>
                                     <p>JAJAJAJA</p>
@@ -85,8 +90,10 @@
                                 <a href=/post/detallePost/<%- posts[i].id  %> ">Ver más...</a>
                             </ul>
                         </div>
+                        <% } %>
+
                     </article>
-                <% } %> 
+                
         
                 </section>
 

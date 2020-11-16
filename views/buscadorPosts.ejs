@@ -46,7 +46,8 @@
                 <ul>   
                     <% for( let i = 0; i < busquedaPost.length; i++) { %>
                     <li>
-                        <a href="/users/detalleUsuario/<% busquedaPost[i].id %>"><%= busquedaPost[i].post_descr %></a>
+                        <h3><%- busquedaPost[i].users.nombre_usuario %> </h3>
+                        <a href="/users/detalleUsuario/<%- busquedaPost[i].id %>"><%= busquedaPost[i].post_descr %></a>
                     </li>
                     <% } %>
                 </ul>
