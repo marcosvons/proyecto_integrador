@@ -10,9 +10,11 @@ router.get("/detallePost/:id", postController.detallePost);
 router.get("/agregarPost", postController.agregarPost);
 router.post("/agregarPost", postController.storePost);
 
-router.post("/borrarPost", postController.borrarPost)
-//router.get("/editarPost/:id", postController.editarPost)
-//router.post("/actualizarPost", postController.actualizarPost)
+router.post("/detallePost/delete/:id", postController.borrarPost)
+router.get("/detallePost/editarPost/:id", postController.editarPost)
+router.post("/detallePost/actualizarPost/:id", postController.actualizarPost)
+
+router.get("/buscadorPosts", postController.buscador)
 
 //router.get("/buscadorPost", postController.buscadorPost);
 //router.get("/resultadoPost", postController.resultadoPost);
